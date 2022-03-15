@@ -101,19 +101,17 @@
 
   echo "<h1> 3 task </h1>";
   $array = array(
-    "MoscowRegion"    => ["Moscow", "Zelenograd", "Klin"],
-    "LeningradRegion" => ["St. Petersburg", "Vsevolozhsk", "Pavlovsk", "Kronstadt"],
-    "RyazanRegion"    => ["Kasimov", "Ryazan", "Sasovo"]
+    "Московская область"    => ["Москва", "Зеленоград", "Клин"],
+    "Ленинградская область" => ["Санкт-Петербург", "Всеволожск", "Павловск", "Кронштадт"],
+    "Рязанская область"     => ["Касимов", "Рязань", "Сасово"]
   );
-  $arrListKey = array_keys($array);  
-  $numItem = 0;
-  foreach ($array as &$row) {
-    echo $arrListKey[$numItem];
-    $numItem++;
+  
+  foreach ($array as $region => $cyti) {
+    echo $region;
     $delimiter = ": ";
-    foreach ($row as $item) {
-      echo $delimiter . $item;
-      $delimiter = ", ";
+    foreach ($cyti as $item) {
+        echo $delimiter . $item;
+        $delimiter = ", ";
     }
     echo "<br>";
   }
@@ -143,13 +141,11 @@
   for ($i = 0; $i < 10; print $i++) {}
 
   echo "<h1> 8 task </h1>";
-  $numItem = 0;
-  foreach ($array as &$row) {
-    echo $arrListKey[$numItem];
-    $numItem++;
+  foreach ($array as $key => $row) {
+    echo $key;
     $delimiter = ": ";
     foreach ($row as $item) {
-      if (mb_substr($item,0,1) === 'K') {
+      if (mb_substr($item,0,1) === 'К') {
         echo $delimiter . $item;
         $delimiter = ", ";
       }
